@@ -9,8 +9,6 @@ public class Sample_EncodingDecoding : MonoBehaviour {
 	// for Test Datas..
 	string strTestData = "ABCD\n가나다\n最初から始める\n~!@#$%^&*(*)(";
 	byte[] bytesDefaultTestData;
-	byte[] bytesUTF8TestData;
-	byte[] bytesUTF16TestData;
 
 
 	public GUIText txtOut;
@@ -44,10 +42,16 @@ public class Sample_EncodingDecoding : MonoBehaviour {
 		          + System.Convert.ToBase64String(bytesUTF8));
 		strRet += "\n\n";
 
-		// for Demo Others...
-		strRet += ("> Encoding Unicode string : \n" 
-		          + System.Text.Encoding.Unicode.GetString(buff));
-		strRet += "\n\n";
+		{
+			// for Demo Others...
+			strRet += ("> Encoding Unicode string : \n" 
+			          + System.Text.Encoding.Unicode.GetString(buff));
+			strRet += "\n\n";
+
+			strRet += ("> Encoding UTF32 string : \n" 
+			           + System.Text.Encoding.UTF32.GetString(buff));
+			strRet += "\n\n";
+		}
 
 		return strRet;
 	}
@@ -57,7 +61,7 @@ public class Sample_EncodingDecoding : MonoBehaviour {
 		float fPosX = 20, fPosY = 50, fYInterval = 40;
 		int nYPosCount = 0;
 		string strOut = "";		
-		// Read...
+
 		nYPosCount = 0;
 		if (GUI.Button(new Rect(fPosX, fPosY + (fYInterval * nYPosCount), 200, 30), "System Default"))
 		{
@@ -72,7 +76,7 @@ public class Sample_EncodingDecoding : MonoBehaviour {
 			txtOut.text += strOut;
 		}
 
-		// Read...
+
 		nYPosCount++;
 		if (GUI.Button(new Rect(fPosX, fPosY + (fYInterval * nYPosCount), 200, 30), "UTF-8"))
 		{
