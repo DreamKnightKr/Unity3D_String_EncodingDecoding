@@ -38,7 +38,7 @@ public class Sample_EncodingDecoding : MonoBehaviour {
 		strRet += "\n\n";
 
 		// for Web requesting Data(When Sarver must use UTF-8.)
-		string strUTF8 = System.Text.Encoding.UTF8.GetString(buff);	// recover string
+		string strUTF8 = System.Text.Encoding.UTF8.GetString(buff);	// return to UTF-8
 		byte[] bytesUTF8 = System.Text.Encoding.UTF8.GetBytes(strUTF8);
 		strRet +=("> Encoding Web request(UTF8 > Base64) string : \n" 
 		          + System.Convert.ToBase64String(bytesUTF8));
