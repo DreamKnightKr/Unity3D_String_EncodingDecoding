@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da6b6ff97a8d96419e9731c9e0e0ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  txtOut: {fileID: 1996178856}
 --- !u!1 &1996178855
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +191,7 @@ GUIText:
   m_GameObject: {fileID: 1996178855}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Output Here~
+  m_Text: Press Button
   m_Anchor: 0
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
@@ -212,7 +213,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996178855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .949999988, z: 0}
+  m_LocalPosition: {x: 0, y: .980000019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
