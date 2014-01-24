@@ -5,13 +5,11 @@ using System.Collections;
  * !!!![Condition]This File Save As UTF-8(Default)
 */
 public class Sample_EncodingDecoding : MonoBehaviour {
+	public GUIText txtOut;
 
 	// for Test Datas..
 	string strTestData = "ABCD\n가나다\n最初から始める\n~!@#$%^&*(*)(";
 	byte[] bytesDefaultTestData;
-
-
-	public GUIText txtOut;
 
 	// Use this for initialization
 	void Start () {
@@ -65,12 +63,13 @@ public class Sample_EncodingDecoding : MonoBehaviour {
 		nYPosCount = 0;
 		if (GUI.Button(new Rect(fPosX, fPosY + (fYInterval * nYPosCount), 200, 30), "System Default"))
 		{
-			txtOut.text = ("Start Testing System default Encording.\n" +
-			               "Original Data : " + strTestData);
-			txtOut.text += "\n\n";
-
+			txtOut.text = "";
 			bytesDefaultTestData = System.Text.Encoding.Default.GetBytes(strTestData);
-			strOut = GetDataEncodingDemos(bytesDefaultTestData);
+
+			strOut = ("Start Testing System default Encording.\n" +
+			          "Original Data : " + strTestData);
+			strOut += "\n\n";
+			strOut += GetDataEncodingDemos(bytesDefaultTestData);
 
 			Debug.Log(strOut);
 			txtOut.text += strOut;
@@ -80,12 +79,13 @@ public class Sample_EncodingDecoding : MonoBehaviour {
 		nYPosCount++;
 		if (GUI.Button(new Rect(fPosX, fPosY + (fYInterval * nYPosCount), 200, 30), "UTF-8"))
 		{
-			txtOut.text = ("Start Testing System default Encording.\n" +
-			               "Original Data : " + strTestData);
-			txtOut.text += "\n\n";
-
+			txtOut.text = "";
 			bytesDefaultTestData = System.Text.Encoding.UTF8.GetBytes(strTestData);
-			strOut = GetDataEncodingDemos(bytesDefaultTestData);
+
+			strOut = ("Start Testing UTF-8 Encording.\n" +
+			               "Original Data : " + strTestData);
+			strOut += "\n\n";
+			strOut += GetDataEncodingDemos(bytesDefaultTestData);
 			
 			Debug.Log(strOut);
 			txtOut.text += strOut;
